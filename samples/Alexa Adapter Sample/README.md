@@ -64,7 +64,7 @@ will allow you to capture everything that the user says and this sample then use
                 {
                     "name": "AMAZON.StopIntent",
                     "samples": []
-                }
+                },
             ],
             "types": [
                 {

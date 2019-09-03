@@ -3,6 +3,20 @@ namespace Bot.Builder.Community.Adapters.Alexa.Directives.Dialogs
 {
     public abstract class DialogDirective : IAlexaDirective
     {
+        /// <summary>
+        /// In cases where we do not need to change the intent, slot values, or confirmation statuses, we can use this constructor.
+        /// </summary>
+        public DialogDirective() { }
+
+        /// <summary>
+        /// Can be used to set the full intent.
+        /// </summary>
+        /// <param name="intent"></param>
+        public DialogDirective(AlexaIntent intent)
+        {
+            UpdatedIntent = intent;
+        }
+
         public DialogDirective(string intent)
         {
             UpdatedIntent = new AlexaIntent();
@@ -16,7 +30,7 @@ namespace Bot.Builder.Community.Adapters.Alexa.Directives.Dialogs
             UpdatedIntent.ConfirmationStatus = confirmationStatus.ToString();
         }
 
-        public AlexaIntent UpdatedIntent;
+        AlexaIntent UpdatedIntent;
 
         /// <summary>
         /// Sets a slot name and value.

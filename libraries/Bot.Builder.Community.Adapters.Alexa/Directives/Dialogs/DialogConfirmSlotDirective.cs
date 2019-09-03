@@ -6,7 +6,17 @@ namespace Bot.Builder.Community.Adapters.Alexa.Directives.Dialogs
     /// </summary>
     public class DialogConfirmSlotDirective : DialogDirective
     {
-        public DialogConfirmSlotDirective(string intent, string slotToConfirm)
+        public DialogConfirmSlotDirective(string slotToConfirm)
+        {
+            SlotToConfirm = slotToConfirm;
+        }
+
+        public DialogConfirmSlotDirective(string slotToConfirm, AlexaIntent intent) : base(intent)
+        {
+            SlotToConfirm = slotToConfirm;
+        }
+
+        public DialogConfirmSlotDirective(string slotToConfirm, string intent)
             : base(intent) {
 
             SlotToConfirm = slotToConfirm;

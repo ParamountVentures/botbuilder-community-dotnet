@@ -6,7 +6,17 @@ namespace Bot.Builder.Community.Adapters.Alexa.Directives.Dialogs
     /// </summary>
     public class DialogElicitSlotDirective : DialogDirective
     {
-        public DialogElicitSlotDirective(string intent, string slotToElicit)
+        public DialogElicitSlotDirective(string slotToElicit)
+        {
+            SlotToElicit = slotToElicit;
+        }
+
+        public DialogElicitSlotDirective(string slotToElicit, AlexaIntent intent) : base(intent)
+        {
+            SlotToElicit = slotToElicit;
+        }
+
+        public DialogElicitSlotDirective(string slotToElicit, string intent)
             : base(intent) {
 
             SlotToElicit = slotToElicit;
